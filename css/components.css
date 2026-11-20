@@ -18,12 +18,65 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.badge-prioridade {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
 
 .badge-prioridade[data-prioridade="alta"] {
   background: var(--prioridade-alta-fundo);
   color: var(--prioridade-alta-texto);
 }
-.badge-prioridade[data-prioridade="media"]{
+
+.badge-prioridade[data-prioridade="media"] {
   background: var(--prioridade-media-fundo);
   color: var(--prioridade-media-texto);
+}
+
+.badge-prioridade[data-prioridade="baixa"] {
+  background: var(--prioridade-baixa-fundo);
+  color: var(--prioridade-baixa-texto);
+}
+
+#botao-nova-tarefa {
+  justify-self: end;
+  background: var(--cor-destaque);
+  color: #fff;
+  border: none;
+  border-radius: var(--raio-borda);
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#campo-busca {
+  width: 250px;
+  height: 40px;
+
+  transition: width 0.4s;
+
+  padding: 0 16px 0 44px;
+
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+}
+
+
+.busca-caixa {
+  position: relative;
+}
+
+#botao-busca {
+  background: none;
+  cursor: pointer;
+  border: none;
+  color: var(--cor-texto);
+
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+
 }

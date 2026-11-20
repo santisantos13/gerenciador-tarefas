@@ -1,4 +1,35 @@
+.marca:hover {
+  transform: translateY(-2px);
+}
+
 .card-tarefa:hover {
   transform: translateY(-4px) rotate(-1deg);
   box-shadow: 4px 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+#botao-nova-tarefa:hover {
+  transform: translateY(-2px);
+}
+
+#botao-nova-tarefa:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 4px;
+}
+
+#campo-busca:focus {
+  width: 300px;
+}
+
+#campo-busca:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 4px;
+}
+
+#botao-busca:hover {
+  color: var(--cor-destaque);
+}
+
+#botao-busca:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  border-radius: 50%;
 }

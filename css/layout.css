@@ -1,7 +1,7 @@
 body {
   background: var(--cor-fundo);
   color: var(--cor-texto);
-  font-family: cursive;
+  font-family: "Patrick Hand", cursive;
 }
 
 .marca {
@@ -10,31 +10,20 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: transform 0.2s ease;
 }
 
 .marca img {
   height: 100px;
   width: auto;
+
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 16px 24px;
-  gap: 16px;
-}
-
-.header-acoes {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-header search {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .visually-hidden {
@@ -66,6 +55,18 @@ main {
   padding: 16px;
   display: flex;
   flex-direction: column;
+}
+
+#coluna-a-definir {
+  background-color: var(--cor-card-a-definir);
+}
+
+#coluna-em-andamento {
+  background-color: var(--cor-card-em-andamento);
+}
+
+#coluna-concluida {
+  background-color: var(--cor-card-concluido);
 }
 
 .lista-tarefas {

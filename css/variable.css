@@ -4,10 +4,20 @@
   --cor-borda: #E3E3DD;
   --cor-texto: #24252B;
   --cor-destaque: #8760b3;
+
   --espaco-md: 16px;
   --raio-borda: 18px;
+
   --prioridade-alta-fundo: #FFE3DE;
   --prioridade-alta-texto: #A12A18;
-  --prioridade-media-fundo: rgb(255, 255, 214);
-  --prioridade-media-texto: rgb(255, 195, 28);
+
+  --prioridade-media-fundo: #FFF1C2;
+  --prioridade-media-texto: #7A5A00;
+
+  --prioridade-baixa-fundo: #c4ffc2;
+  --prioridade-baixa-texto: #147a00;
+
+  --cor-card-a-definir: #FCF4C3;
+  --cor-card-em-andamento: #77D4E5;
+  --cor-card-concluido: #D5C8F6;
 }

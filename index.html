@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lembrei</title>
-  <!-- no <head>, antes dos seus CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variable.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -17,22 +16,34 @@
 
 <body>
   <header>
+
     <a href="index.html" class="marca">
-      <img src="assets/icons/logo.png" alt="Lembrei - voltar ao inicio">
+      <img src="assets/icons/logo.png" alt="Lembrei - voltar ao início">
       <h1 id="titulo"> Lembrei! </h1>
     </a>
 
-    <div class="header-acoes">
-      <search>
-        <label for="campo-busca" class="visually-hidden">Buscar Tarefa</label>
-        <input type="search" id="campo-busca" placeholder="Buscar tarefa...">
-        <button id="botao-busca">Buscar</button>
-      </search>
 
-      <div>
-        <button type="button" id="botao-nova-tarefa">Nova tarefa</button>
+    <search>
+      <label for="campo-busca" class="visually-hidden">Buscar Tarefa</label>
+
+      <div class="busca-caixa">
+        <button type="button" id="botao-busca" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="16.5" y1="16.5" x2="21" y2="21" />
+          </svg>
+        </button>
+
+        <input type="search" id="campo-busca" placeholder="Buscar tarefa...">
       </div>
-    </div>
+
+    </search>
+
+
+    <button type="button" id="botao-nova-tarefa">Nova tarefa</button>
+
+
   </header>
 
   <main>
@@ -50,6 +61,12 @@
           <h3>Estudar Python</h3>
           <span class="badge-prioridade" data-prioridade="media">Média</span>
           <p class="prazo">Prazo: 01/01/2027</p>
+        </article>
+
+        <article class="card-tarefa">
+          <h3>Vegetar</h3>
+          <span class="badge-prioridade" data-prioridade="baixa">Baixa</span>
+          <p class="prazo">Prazo: indefinido</p>
         </article>
 
       </div>
