@@ -1,0 +1,62 @@
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: cursive;
+}
+
+.marca {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.marca img {
+  height: 100px;
+  width: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 16px;
+}
+
+.header-acoes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+main {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-md);
+}
+
+.coluna {
+  border: solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  text-align: center;
+}

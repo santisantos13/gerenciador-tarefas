@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lembrei</title>
+  <!-- no <head>, antes dos seus CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variable.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -15,10 +17,12 @@
 
 <body>
   <header>
+    <a href="index.html" class="marca">
+      <img src="assets/icons/logo.png" alt="Lembrei - voltar ao inicio">
+      <h1 id="titulo"> Lembrei! </h1>
+    </a>
 
-    <h1 id="titulo"> Lembrei! </h1>
-
-    <div>
+    <div class="header-acoes">
       <search>
         <label for="campo-busca" class="visually-hidden">Buscar Tarefa</label>
         <input type="search" id="campo-busca" placeholder="Buscar tarefa...">

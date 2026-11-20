@@ -1,11 +1,9 @@
 :root {
-  --cor-fundo: #0f1117;
-  --cor-superficie: #1b1f2a;
-
-
-  /* cor dos cards e colunas */
-  --cor-texto: #e8eaf0;
-  --cor-destaque: #6c8cff;
+  --cor-fundo: #F7F7F4;
+  --cor-superficie: #FFFFFF;
+  --cor-texto: #24252B;
+  --cor-destaque: #8760b3;
   --espaco-md: 16px;
-  --raio-borda: 12px;
+  --raio-borda: 18px;
+  --cor-borda: #24252B;
 }
