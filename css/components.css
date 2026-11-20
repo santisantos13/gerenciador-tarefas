@@ -1,0 +1,29 @@
+.card-tarefa {
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #333;
+  padding: 16px;
+
+  /* Centraliza o texto dentro do próprio post-it */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Efeito visual de papel colado */
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 1px 1px 18px 1px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.badge-prioridade[data-prioridade="alta"] {
+  background: var(--prioridade-alta-fundo);
+  color: var(--prioridade-alta-texto);
+}
+.badge-prioridade[data-prioridade="media"]{
+  background: var(--prioridade-media-fundo);
+  color: var(--prioridade-media-texto);
+}

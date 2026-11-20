@@ -1,9 +1,13 @@
 :root {
   --cor-fundo: #F7F7F4;
   --cor-superficie: #FFFFFF;
+  --cor-borda: #E3E3DD;
   --cor-texto: #24252B;
   --cor-destaque: #8760b3;
   --espaco-md: 16px;
   --raio-borda: 18px;
-  --cor-borda: #24252B;
+  --prioridade-alta-fundo: #FFE3DE;
+  --prioridade-alta-texto: #A12A18;
+  --prioridade-media-fundo: rgb(255, 255, 214);
+  --prioridade-media-texto: rgb(255, 195, 28);
 }
