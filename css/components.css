@@ -53,11 +53,8 @@
 #campo-busca {
   width: 250px;
   height: 40px;
-
   transition: width 0.4s;
-
   padding: 0 16px 0 44px;
-
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio-borda);
 }
@@ -72,7 +69,6 @@
   cursor: pointer;
   border: none;
   color: var(--cor-texto);
-
   position: absolute;
   left: 14px;
   top: 50%;

@@ -5,6 +5,10 @@
   --cor-texto: #24252B;
   --cor-destaque: #8760b3;
 
+  --cor-card-a-definir: #FCF4C3;
+  --cor-card-em-andamento: #77D4E5;
+  --cor-card-concluido: #D5C8F6;
+
   --espaco-md: 16px;
   --raio-borda: 18px;
 
@@ -17,7 +21,5 @@
   --prioridade-baixa-fundo: #c4ffc2;
   --prioridade-baixa-texto: #147a00;
 
-  --cor-card-a-definir: #FCF4C3;
-  --cor-card-em-andamento: #77D4E5;
-  --cor-card-concluido: #D5C8F6;
+
 }
