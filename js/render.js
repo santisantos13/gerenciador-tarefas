@@ -1,4 +1,5 @@
 export function criarCardTarefa(tarefa){
+  
   const card = document.createElement("article");
   card.classList.add("card-tarefa");
 
@@ -12,6 +13,10 @@ export function criarCardTarefa(tarefa){
   badge.textContent = tarefa.prioridade;
   card.append(badge);
 
-  
+  const prazo = document.createElement("p");
+  prazo.classList.add("prazo");
+  prazo.textContent =  "Prazo: " + tarefa.prazo;
+  card.append(prazo);
+
   return card;
 }

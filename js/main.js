@@ -9,3 +9,5 @@ campoBusca.addEventListener("input", () => {
 
 const listaADefinir = document.querySelector("#coluna-a-definir .lista-tarefas");
 listaADefinir.append(criarCardTarefa(tarefas[0]));
+listaADefinir.append(criarCardTarefa(tarefas[1]));
+listaADefinir.append(criarCardTarefa(tarefas[2]));
