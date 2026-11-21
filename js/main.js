@@ -1,3 +1,4 @@
+import { criarCardTarefa } from "./render.js";
 import { tarefas } from "./state.js";
 console.log(tarefas);
 
@@ -6,4 +7,5 @@ campoBusca.addEventListener("input", () => {
   console.log(campoBusca.value);
 })
 
-//const coluna = document.querySelector(`[data-status="${tarefa.status}"]`);
+const listaADefinir = document.querySelector("#coluna-a-definir .lista-tarefas");
+listaADefinir.append(criarCardTarefa(tarefas[0]));
