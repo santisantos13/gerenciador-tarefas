@@ -28,3 +28,17 @@ export function criarCardTarefa(tarefa){
 
   return card;
 }
+
+export function renderizar(tarefas){
+  const listas = document.querySelectorAll(".lista-tarefas");
+
+  for (const lista of listas){
+    lista.replaceChildren();
+  }
+
+  for (const tarefa of tarefas){
+    const lista = document.querySelector(`[data-status="${tarefa.status}"] .lista-tarefas`);
+    const card = criarCardTarefa(tarefa);
+    lista.append(card);
+  }
+}
