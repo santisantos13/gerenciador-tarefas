@@ -57,12 +57,34 @@ main {
   flex-direction: column;
 }
 
+.coluna h2::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+#coluna-a-definir h2::before {
+  background: var(--bolinha-a-definir);
+}
+
 #coluna-a-definir {
   background-color: var(--cor-card-a-definir);
 }
 
+#coluna-em-andamento h2::before {
+  background: var(--bolinha-em-andamento);
+}
+
 #coluna-em-andamento {
   background-color: var(--cor-card-em-andamento);
+}
+
+#coluna-concluida h2::before {
+  background: var(--bolinha-concluido);
 }
 
 #coluna-concluida {
