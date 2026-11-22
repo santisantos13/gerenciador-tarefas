@@ -1,7 +1,7 @@
 import { tarefas, adicionarTarefa } from "./state.js";
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
-import { salvarTarefas } from "./storage.js";
+import { carregarTarefas, salvarTarefas } from "./storage.js";
 
 renderizar(tarefas);
 
@@ -45,6 +45,9 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
   salvarTarefas(tarefas);
   renderizar(tarefas);
   formTarefa.reset();
+  console.log(carregarTarefas())
   modal.close();
+
 })
+
 
