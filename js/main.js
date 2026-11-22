@@ -1,6 +1,7 @@
 import { tarefas, adicionarTarefa } from "./state.js";
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
+import { salvarTarefas } from "./storage.js";
 
 renderizar(tarefas);
 
@@ -20,11 +21,9 @@ botaoFechar.addEventListener("click", () => {
   modal.close();
 });
 
-
 const botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 botaoNovaTarefa.addEventListener("click", () => {
-  modal.showModal(); 
-  console.log("botao funcionou")
+  modal.showModal();
 });
 
 const formTarefa = document.getElementById("form-tarefa");
@@ -43,8 +42,8 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
   }
 
   adicionarTarefa(novaTarefa);
+  salvarTarefas(tarefas);
   renderizar(tarefas);
-  console.log("criar tarefa deu certo, uhuuuu")
   formTarefa.reset();
   modal.close();
 })
