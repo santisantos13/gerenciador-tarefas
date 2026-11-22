@@ -66,10 +66,26 @@
   </main>
 
   <dialog id="modal-tarefa">
-    <h2>Nova tarefa</h2>
-    <button type="button" id="botao-cancelar">Cancelar</button>
-  </dialog>
+    <form id="form-tarefa">
+      <h2>Nova tarefa</h2>
 
+      <label for="tarefa-titulo">Título</label>
+      <input type="text" id="tarefa-titulo" required>
+
+      <label for="prioridade">Prioridade</label>
+      <select id="prioridade">
+        <option value="p">Alta</option>
+        <option value="m">Média</option>
+        <option value="g">Baixa</option>
+      </select>
+
+      <label for="prazo">Prazo</label>
+      <input type="date" id="nascimento">
+
+      <button type="button" id="botao-cancelar">Cancelar</button>
+      <button type="submit">Criar tarefa</button>
+    </form>
+  </dialog>
 </body>
 
 </html>
