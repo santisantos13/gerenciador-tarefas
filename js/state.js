@@ -9,3 +9,11 @@ export const tarefas = carregarTarefas() ?? tarefasDeExemplo;
 export function adicionarTarefa(tarefa) {
   tarefas.push(tarefa);
 }
+
+export function removerTarefa(id) {
+  const posicao = tarefas.findIndex((tarefa) => tarefa.id === id);
+
+  if (posicao !== -1) {
+    tarefas.splice(posicao, 1);
+  }
+}

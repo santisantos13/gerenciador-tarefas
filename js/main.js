@@ -1,7 +1,7 @@
-import { tarefas, adicionarTarefa } from "./state.js";
+import { tarefas, adicionarTarefa, removerTarefa } from "./state.js";
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
-import { carregarTarefas, salvarTarefas } from "./storage.js";
+import { salvarTarefas } from "./storage.js";
 
 renderizar(tarefas);
 
@@ -12,7 +12,7 @@ campoBusca.addEventListener("input", () => {
 
 const botaoCancelar = document.getElementById("botao-cancelar");
 botaoCancelar.addEventListener("click", () => {
-  modal.close(); 
+  modal.close();
 });
 
 const botaoFechar = document.getElementById("botao-fechar");
@@ -29,12 +29,12 @@ botaoNovaTarefa.addEventListener("click", () => {
 const formTarefa = document.getElementById("form-tarefa");
 formTarefa.addEventListener("submit", (criarTarefa) => {
   criarTarefa.preventDefault();
-  
+
   const tarefaTitulo = document.getElementById("tarefa-titulo").value;
   const prioridade = document.getElementById("prioridade").value;
   const prazo = document.getElementById("prazo").value;
   const novaTarefa = {
-    id:gerarId(),
+    id: gerarId(),
     titulo: tarefaTitulo,
     prioridade: prioridade,
     prazo: prazo,
@@ -45,9 +45,23 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
   salvarTarefas(tarefas);
   renderizar(tarefas);
   formTarefa.reset();
-  console.log(carregarTarefas())
   modal.close();
-
 })
+
+const areaColunas = document.querySelector("main");
+
+areaColunas.addEventListener("click", (evento) => {
+  const botaoRemover = evento.target.closest(".botao-remover-tarefa");
+
+  if (!botaoRemover) {
+    return;
+  }
+
+  const id = botaoRemover.dataset.id;
+  removerTarefa(id);
+  salvarTarefas(tarefas);
+  renderizar(tarefas);
+  console.log("deu certo")
+});
 
 
