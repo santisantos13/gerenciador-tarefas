@@ -43,8 +43,9 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
   }
 
   adicionarTarefa(novaTarefa);
-  console.log(tarefas);
+  renderizar(tarefas);
   console.log("criar tarefa deu certo, uhuuuu")
+  formTarefa.reset();
   modal.close();
 })
 
