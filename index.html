@@ -67,23 +67,41 @@
 
   <dialog id="modal-tarefa">
     <form id="form-tarefa">
-      <h2>Nova tarefa</h2>
+      <div class="modal-header">
+        <div>
+          <h2>Nova tarefa</h2>
+          <p class="subtitulo">Organize os detalhes e prazos da sua tarefa.</p>
+        </div>
+        <button type="button" id="botao-fechar" aria-label="Fechar">✕</button>
+      </div>
 
-      <label for="tarefa-titulo">Título</label>
-      <input type="text" id="tarefa-titulo" required>
+      <div class="campo">
+        <label for="tarefa-titulo">Título <span>*</span></label>
+        <input type="text" id="tarefa-titulo" placeholder="Ex: Estudar JavaScript..." required>
+      </div>
 
-      <label for="prioridade">Prioridade</label>
-      <select id="prioridade">
-        <option value="alta">Alta</option>
-        <option value="media">Média</option>
-        <option value="baixa">Baixa</option>
-      </select>
+      <div class="linha-dupla">
+        <div class="campo">
+          <label for="prioridade">Prioridade</label>
+          <select id="prioridade">
+            <option value="alta">Alta</option>
+            <option value="media" selected>Média</option>
+            <option value="baixa">Baixa</option>
+          </select>
+        </div>
 
-      <label for="prazo">Prazo</label>
-      <input type="date" id="nascimento">
+        <div class="divisor"></div>
 
-      <button type="button" id="botao-cancelar">Cancelar</button>
-      <button type="submit">Criar tarefa</button>
+        <div class="campo">
+          <label for="prazo">Prazo</label>
+          <input type="date" id="prazo">
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button type="button" id="botao-cancelar" class="botao-secundario">Cancelar</button>
+        <button type="submit" class="botao-primario">✓ Criar tarefa</button>
+      </div>
     </form>
   </dialog>
 </body>

@@ -10,6 +10,7 @@ campoBusca.addEventListener("input", () => {
 
 const botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 const botaoCancelar = document.getElementById("botao-cancelar");
+const botaoFechar = document.getElementById("botao-fechar");
 const modal = document.getElementById("modal-tarefa");
 
 botaoNovaTarefa.addEventListener("click", () => {
@@ -18,4 +19,8 @@ botaoNovaTarefa.addEventListener("click", () => {
 
 botaoCancelar.addEventListener("click", () => {
   modal.close(); 
+});
+
+botaoFechar.addEventListener("click", () => {
+  modal.close();
 });
