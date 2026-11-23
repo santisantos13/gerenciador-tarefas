@@ -5,9 +5,9 @@
   box-sizing: border-box;
   background-color: #ffffff;
   color: #333;
-  padding: 16px;
 
-  /* Centraliza o texto dentro do próprio post-it */
+  padding: 32px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -42,6 +42,20 @@
 
 .botao-remover-tarefa:hover {
   color: var(--cor-erro);
+}
+
+.botao-editar-tarefa {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--cor-texto);
+}
+
+.botao-editar-tarefa:hover {
+  color: var(--cor-destaque);
 }
 
 .seletor-status {

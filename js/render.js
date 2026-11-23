@@ -35,6 +35,13 @@ export function criarCardTarefa(tarefa) {
   botaoRemover.textContent = "✕";
   card.append(botaoRemover);
 
+  const botaoEditar = document.createElement("button");
+  botaoEditar.classList.add("botao-editar-tarefa");
+  botaoEditar.dataset.id = tarefa.id;
+  botaoEditar.setAttribute("aria-label", "Editar tarefa");
+  botaoEditar.textContent = "✎";
+  card.append(botaoEditar)
+
   const seletorStatus = document.createElement("select");
   seletorStatus.classList.add("seletor-status");
   seletorStatus.dataset.id = tarefa.id;

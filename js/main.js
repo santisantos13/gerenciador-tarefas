@@ -1,4 +1,4 @@
-import { tarefas, adicionarTarefa, moverTarefa, removerTarefa } from "./state.js";
+import { tarefas, adicionarTarefa, moverTarefa, editarTarefa, removerTarefa } from "./state.js";
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
 import { salvarTarefas } from "./storage.js";

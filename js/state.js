@@ -25,3 +25,13 @@ export function moverTarefa(id, novoStatus) {
     tarefa.status = novoStatus;
   }
 }
+
+export function editarTarefa(id, novoTitulo, novaPrioridade, novoPrazo) {
+  const tarefa = tarefas.find((tarefa) => tarefa.id === id);
+
+  if (tarefa) {
+    tarefa.titulo = novoTitulo;
+    tarefa.prioridade = novaPrioridade;
+    tarefa.prazo = novoPrazo;
+  }
+}
