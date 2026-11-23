@@ -35,3 +35,7 @@ export function editarTarefa(id, novoTitulo, novaPrioridade, novoPrazo) {
     tarefa.prazo = novoPrazo;
   }
 }
+
+export function buscarTarefa(id) {
+  return tarefas.find((tarefa) => tarefa.id === id);
+}

@@ -1,7 +1,9 @@
-import { tarefas, adicionarTarefa, moverTarefa, editarTarefa, removerTarefa } from "./state.js";
+import { tarefas, adicionarTarefa, moverTarefa, editarTarefa, buscarTarefa, removerTarefa } from "./state.js";
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
+
+let idEmEdicao = null;
 
 renderizar(tarefas);
 
@@ -23,6 +25,8 @@ botaoFechar.addEventListener("click", () => {
 
 const botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 botaoNovaTarefa.addEventListener("click", () => {
+  idEmEdicao = null;
+  formTarefa.reset();
   modal.showModal();
 });
 
@@ -33,20 +37,26 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
   const tarefaTitulo = document.getElementById("tarefa-titulo").value;
   const prioridade = document.getElementById("prioridade").value;
   const prazo = document.getElementById("prazo").value;
-  const novaTarefa = {
-    id: gerarId(),
-    titulo: tarefaTitulo,
-    prioridade: prioridade,
-    prazo: prazo,
-    status: "a-definir",
+
+  if (idEmEdicao === null) {
+    const novaTarefa = {
+      id: gerarId(),
+      titulo: tarefaTitulo,
+      prioridade: prioridade,
+      prazo: prazo,
+      status: "a-definir",
+    };
+    adicionarTarefa(novaTarefa);
+  } else {
+    editarTarefa(idEmEdicao, tarefaTitulo, prioridade, prazo);
   }
 
-  adicionarTarefa(novaTarefa);
   salvarTarefas(tarefas);
   renderizar(tarefas);
   formTarefa.reset();
+  idEmEdicao = null;
   modal.close();
-})
+});
 
 const areaColunas = document.querySelector("main");
 areaColunas.addEventListener("click", (evento) => {
@@ -77,6 +87,21 @@ areaColunas.addEventListener("change", (evento) => {
   console.log("gg")
   salvarTarefas(tarefas);
   renderizar(tarefas);
-
 })
+
+areaColunas.addEventListener("click", (evento) => {
+  const botaoEditar = evento.target.closest(".botao-editar-tarefa");
+
+  if (!botaoEditar) {
+    return;
+  }
+
+  const tarefa = buscarTarefa(botaoEditar.dataset.id);
+  document.getElementById("tarefa-titulo").value = tarefa.titulo;
+  document.getElementById("prioridade").value = tarefa.prioridade;
+  document.getElementById("prazo").value = tarefa.prazo;
+
+  idEmEdicao = tarefa.id;
+  modal.showModal();
+});
 
