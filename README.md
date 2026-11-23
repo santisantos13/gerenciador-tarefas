@@ -26,7 +26,7 @@ DEMO ONLINE:
 - [x] Tarefas salvas no navegador (continuam lá depois de recarregar a página)
 - [x] Animações em CSS (hover nos cards, botões e logo)
 - [x] Mover tarefas entre as colunas
-- [ ] Editar tarefas
+- [x] Editar tarefas
 - [ ] Busca por nome
 - [ ] Filtros por prioridade e status
 
