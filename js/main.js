@@ -4,6 +4,8 @@ import { gerarId } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
 
 let idEmEdicao = null;
+const tituloModal = document.getElementById("modal-titulo");
+const botaoSalvar = document.getElementById("botao-salvar")
 
 renderizar(tarefas);
 
@@ -27,6 +29,8 @@ const botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 botaoNovaTarefa.addEventListener("click", () => {
   idEmEdicao = null;
   formTarefa.reset();
+  tituloModal.textContent = "Criar tarefa";
+  botaoSalvar.textContent = "✓ Cadastrar";
   modal.showModal();
 });
 
@@ -39,6 +43,7 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
   const prazo = document.getElementById("prazo").value;
 
   if (idEmEdicao === null) {
+
     const novaTarefa = {
       id: gerarId(),
       titulo: tarefaTitulo,
@@ -92,6 +97,7 @@ areaColunas.addEventListener("change", (evento) => {
 areaColunas.addEventListener("click", (evento) => {
   const botaoEditar = evento.target.closest(".botao-editar-tarefa");
 
+
   if (!botaoEditar) {
     return;
   }
@@ -102,6 +108,8 @@ areaColunas.addEventListener("click", (evento) => {
   document.getElementById("prazo").value = tarefa.prazo;
 
   idEmEdicao = tarefa.id;
+  tituloModal.textContent = "Editar tarefa";
+  botaoSalvar.textContent = "✓ Salvar alterações";
   modal.showModal();
 });
 
