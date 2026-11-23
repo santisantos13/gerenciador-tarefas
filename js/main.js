@@ -1,8 +1,9 @@
-import { tarefas, adicionarTarefa, removerTarefa } from "./state.js";
+import { tarefas, adicionarTarefa, moverTarefa, removerTarefa } from "./state.js";
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
 
+moverTarefa("21aec435-c74f-478c-a47a-7ba09c856401", "concluida")
 renderizar(tarefas);
 
 const campoBusca = document.getElementById("campo-busca");
@@ -49,7 +50,6 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
 })
 
 const areaColunas = document.querySelector("main");
-
 areaColunas.addEventListener("click", (evento) => {
   const botaoRemover = evento.target.closest(".botao-remover-tarefa");
 

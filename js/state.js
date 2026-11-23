@@ -17,3 +17,11 @@ export function removerTarefa(id) {
     tarefas.splice(posicao, 1);
   }
 }
+
+export function moverTarefa(id, novoStatus) {
+  const tarefa = tarefas.find((tarefa) => tarefa.id === id);
+
+  if (tarefa) {
+    tarefa.status = novoStatus;
+  }
+}
