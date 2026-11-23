@@ -3,7 +3,6 @@ import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
 
-moverTarefa("21aec435-c74f-478c-a47a-7ba09c856401", "concluida")
 renderizar(tarefas);
 
 const campoBusca = document.getElementById("campo-busca");
@@ -64,4 +63,20 @@ areaColunas.addEventListener("click", (evento) => {
   console.log("deu certo")
 });
 
+areaColunas.addEventListener("change", (evento) => {
+  const seletor = evento.target.closest(".seletor-status");
+
+  if (!seletor) {
+    return;
+  }
+
+  const id = seletor.dataset.id;
+  const novoStatus = seletor.value;
+
+  moverTarefa(id, novoStatus);
+  console.log("gg")
+  salvarTarefas(tarefas);
+  renderizar(tarefas);
+
+})
 

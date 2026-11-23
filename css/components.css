@@ -1,7 +1,7 @@
 .card-tarefa {
   position: relative;
   width: 200px;
-  height: 200px;
+  min-height: 200px;
   box-sizing: border-box;
   background-color: #ffffff;
   color: #333;
@@ -42,6 +42,15 @@
 
 .botao-remover-tarefa:hover {
   color: var(--cor-erro);
+}
+
+.seletor-status {
+  font: inherit;
+  border: none;
+  background-color: var(--cor-fundo);
+  border-radius: var(--raio-borda);
+  padding: 3px 7px;
+  cursor: pointer;
 }
 
 .badge-prioridade {

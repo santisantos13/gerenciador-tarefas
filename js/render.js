@@ -6,6 +6,8 @@ const rotuloPrioridade = {
   baixa: "BAIXA",
 };
 
+const rotuloStatus = { "a-definir": "A definir", "em-andamento": "Em andamento", "concluida": "Concluídas" };
+
 export function criarCardTarefa(tarefa) {
 
   const card = document.createElement("article");
@@ -32,6 +34,19 @@ export function criarCardTarefa(tarefa) {
   botaoRemover.setAttribute("aria-label", "Excluir tarefa")
   botaoRemover.textContent = "✕";
   card.append(botaoRemover);
+
+  const seletorStatus = document.createElement("select");
+  seletorStatus.classList.add("seletor-status");
+  seletorStatus.dataset.id = tarefa.id;
+  seletorStatus.setAttribute("aria-label", "Mover card para outro status");
+  for (const [valor, rotulo] of Object.entries(rotuloStatus)) {
+    const opcao = document.createElement("option");
+    opcao.value = valor;
+    opcao.textContent = rotulo;
+    opcao.selected = (valor === tarefa.status);
+    seletorStatus.append(opcao);
+  }
+  card.append(seletorStatus);
 
   return card;
 }
