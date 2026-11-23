@@ -25,7 +25,7 @@ DEMO ONLINE:
 - [x] Três colunas: **A definir**, **Em andamento** e **Concluídas**
 - [x] Tarefas salvas no navegador (continuam lá depois de recarregar a página)
 - [x] Animações em CSS (hover nos cards, botões e logo)
-- [ ] Mover tarefas entre as colunas
+- [x] Mover tarefas entre as colunas
 - [ ] Editar tarefas
 - [ ] Busca por nome
 - [ ] Filtros por prioridade e status
