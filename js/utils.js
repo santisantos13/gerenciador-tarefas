@@ -14,10 +14,10 @@ export function gerarId() {
 export function dataDeHoje() {
   const hoje = new Date();
   const anoAtual = hoje.getFullYear();
-  const mesAtual = String(hoje.getMonth()).padStart(1, "0");
-  const dataAtual = hoje.getDate();
+  const mesAtual = String(hoje.getMonth() + 1).padStart(2, "0");
+  const diaAtual = String(hoje.getDate()).padStart(2, "0");
 
-  return `${anoAtual}-${mesAtual}-${dataAtual}`;
+  return `${anoAtual}-${mesAtual}-${diaAtual}`;
 }
 
 export function estaVencida(prazo) {

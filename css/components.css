@@ -270,3 +270,16 @@
   background-color: var(--cor-destaque);
   color: var(--cor-superficie);
 }
+
+.card-vencido .prazo {
+  color: var(--cor-erro);
+  font-weight: 700;
+}
+
+.card-vencido .prazo::before {
+  content: "⚠ ";
+}
+
+.card-vencido {
+  border-top: 4px solid var(--cor-erro);
+}

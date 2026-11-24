@@ -28,7 +28,7 @@ DEMO ONLINE:
 - [x] Mover tarefas entre as colunas
 - [x] Editar tarefas
 - [x] Busca por nome
-- [ ] Filtros por prioridade e status
+- [x] Filtros por prioridade e status
 
 ## Tecnologias
 
@@ -107,7 +107,7 @@ Cada arquivo tem uma responsabilidade só. Por exemplo, para trocar o `localStor
 - [ ] Mover tarefas entre colunas (e depois com arrastar e soltar)
 - [ ] Editar tarefas reaproveitando o modal
 - [ ] Busca por nome e filtros por prioridade e status
-- [ ] Estado vazio nas colunas e destaque para prazos vencidos
+- [x] Estado vazio nas colunas e destaque para prazos vencidos
 - [ ] Tema escuro
 - [ ] Versão responsiva para celular
 - [ ] Novo layout com barra lateral e contadores nas colunas

@@ -13,7 +13,7 @@ export function criarCardTarefa(tarefa) {
   const card = document.createElement("article");
   card.classList.add("card-tarefa");
 
-  if (tarefa !== "concluida" && estaVencida(tarefa.prazo)) {
+  if (tarefa.status !== "concluida" && estaVencida(tarefa.prazo)) {
     card.classList.add('card-vencido');
   }
 
