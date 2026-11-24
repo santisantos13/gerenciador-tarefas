@@ -104,9 +104,9 @@ Cada arquivo tem uma responsabilidade só. Por exemplo, para trocar o `localStor
 
 ## Próximos passos
 
-- [ ] Mover tarefas entre colunas (e depois com arrastar e soltar)
-- [ ] Editar tarefas reaproveitando o modal
-- [ ] Busca por nome e filtros por prioridade e status
+- [x] Mover tarefas entre colunas (e depois com arrastar e soltar)
+- [x] Editar tarefas reaproveitando o modal
+- [x] Busca por nome e filtros por prioridade e status
 - [x] Estado vazio nas colunas e destaque para prazos vencidos
 - [ ] Tema escuro
 - [ ] Versão responsiva para celular
