@@ -8,16 +8,19 @@ let idEmEdicao = null;
 const tituloModal = document.getElementById("modal-titulo");
 const botaoSalvar = document.getElementById("botao-salvar");
 const campoBusca = document.getElementById("campo-busca");
+const filtroPrioridade = document.getElementById("filtro-prioridade");
+
 
 function atualizarTela() {
   const encontrados = filtrarPorTitulo(tarefas, campoBusca.value);
-  renderizar(encontrados);
+  const filtradas = filtrarPorPrioridade(encontrados, filtroPrioridade.value);
+  renderizar(filtradas);
 };
 
 atualizarTela();
 
+filtroPrioridade.addEventListener("change", atualizarTela)
 campoBusca.addEventListener("input", atualizarTela)
-
 
 const botaoCancelar = document.getElementById("botao-cancelar");
 botaoCancelar.addEventListener("click", () => {
