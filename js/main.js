@@ -8,15 +8,17 @@ import { filtrarPorTitulo } from "./filters.js";
 let idEmEdicao = null;
 const tituloModal = document.getElementById("modal-titulo");
 const botaoSalvar = document.getElementById("botao-salvar");
-
-
-renderizar(tarefas);
-
 const campoBusca = document.getElementById("campo-busca");
-campoBusca.addEventListener("input", () => {
+
+function atualizarTela() {
   const encontrados = filtrarPorTitulo(tarefas, campoBusca.value);
   renderizar(encontrados);
-})
+};
+
+atualizarTela();
+
+campoBusca.addEventListener("input", atualizarTela)
+
 
 const botaoCancelar = document.getElementById("botao-cancelar");
 botaoCancelar.addEventListener("click", () => {
@@ -61,7 +63,7 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
   }
 
   salvarTarefas(tarefas);
-  renderizar(tarefas);
+  atualizarTela();
   formTarefa.reset();
   idEmEdicao = null;
   modal.close();
@@ -78,7 +80,7 @@ areaColunas.addEventListener("click", (evento) => {
   const id = botaoRemover.dataset.id;
   removerTarefa(id);
   salvarTarefas(tarefas);
-  renderizar(tarefas);
+  atualizarTela();
   console.log("deu certo")
 });
 
@@ -95,7 +97,7 @@ areaColunas.addEventListener("change", (evento) => {
   moverTarefa(id, novoStatus);
   console.log("gg")
   salvarTarefas(tarefas);
-  renderizar(tarefas);
+  atualizarTela();
 })
 
 areaColunas.addEventListener("click", (evento) => {

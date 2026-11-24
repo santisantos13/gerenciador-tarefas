@@ -27,7 +27,7 @@ DEMO ONLINE:
 - [x] Animações em CSS (hover nos cards, botões e logo)
 - [x] Mover tarefas entre as colunas
 - [x] Editar tarefas
-- [ ] Busca por nome
+- [x] Busca por nome
 - [ ] Filtros por prioridade e status
 
 ## Tecnologias
