@@ -2,16 +2,20 @@ import { tarefas, adicionarTarefa, moverTarefa, editarTarefa, buscarTarefa, remo
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
+import { filtrarPorTitulo } from "./filters.js";
+
 
 let idEmEdicao = null;
 const tituloModal = document.getElementById("modal-titulo");
-const botaoSalvar = document.getElementById("botao-salvar")
+const botaoSalvar = document.getElementById("botao-salvar");
+
 
 renderizar(tarefas);
 
 const campoBusca = document.getElementById("campo-busca");
 campoBusca.addEventListener("input", () => {
-  console.log(campoBusca.value);
+  const encontrados = filtrarPorTitulo(tarefas, campoBusca.value);
+  renderizar(encontrados);
 })
 
 const botaoCancelar = document.getElementById("botao-cancelar");
@@ -112,4 +116,6 @@ areaColunas.addEventListener("click", (evento) => {
   botaoSalvar.textContent = "✓ Salvar alterações";
   modal.showModal();
 });
+
+
 
