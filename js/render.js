@@ -1,4 +1,4 @@
-import { formatarPrazo } from "./utils.js";
+import { formatarPrazo, estaVencida } from "./utils.js";
 
 const rotuloPrioridade = {
   alta: "ALTA",
@@ -12,6 +12,10 @@ export function criarCardTarefa(tarefa) {
 
   const card = document.createElement("article");
   card.classList.add("card-tarefa");
+
+  if (tarefa !== "concluida" && estaVencida(tarefa.prazo)) {
+    card.classList.add('card-vencido');
+  }
 
   const titulo = document.createElement("h3");
   titulo.textContent = tarefa.titulo;
