@@ -1,6 +1,6 @@
 import { tarefas, adicionarTarefa, moverTarefa, editarTarefa, buscarTarefa, removerTarefa } from "./state.js";
 import { renderizar } from "./render.js";
-import { gerarId } from "./utils.js";
+import { gerarId, estaVencida, dataDeHoje } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
 import { filtrarPorTitulo, filtrarPorPrioridade } from "./filters.js";
 
