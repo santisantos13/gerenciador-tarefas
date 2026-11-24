@@ -1,3 +1,12 @@
+#filtro-prioridade {
+  font: inherit;
+  padding: 6px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+
 .card-tarefa {
   position: relative;
   width: 200px;

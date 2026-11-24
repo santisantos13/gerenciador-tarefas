@@ -2,8 +2,7 @@ import { tarefas, adicionarTarefa, moverTarefa, editarTarefa, buscarTarefa, remo
 import { renderizar } from "./render.js";
 import { gerarId } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
-import { filtrarPorTitulo } from "./filters.js";
-
+import { filtrarPorTitulo, filtrarPorPrioridade } from "./filters.js";
 
 let idEmEdicao = null;
 const tituloModal = document.getElementById("modal-titulo");
