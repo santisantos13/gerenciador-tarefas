@@ -33,3 +33,40 @@
   outline: 2px solid var(--cor-destaque);
   border-radius: 50%;
 }
+
+@keyframes modal-entra {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#modal-tarefa[open] {
+  animation: modal-entra 0.25s ease;
+}
+
+@keyframes fundo-entra {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#modal-tarefa[open]::backdrop {
+  animation: fundo-entra 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
