@@ -100,6 +100,7 @@ main {
 }
 
 .lista-tarefas {
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,4 +108,25 @@ main {
   overflow-y: auto;
   flex: 1;
   padding-top: 8px;
+}
+
+[data-status="concluida"] .lista-tarefas:empty::before {
+  content: "Nenhuma tarefa concluída...";
+  color: var(--cor-texto-escurecido);
+  text-align: center;
+  margin-top: 24px;
+}
+
+[data-status="em-andamento"] .lista-tarefas:empty::before {
+  content: "Nenhuma tarefa em andamento...";
+  color: var(--cor-texto-escurecido);
+  text-align: center;
+  margin-top: 24px;
+}
+
+[data-status="a-definir"] .lista-tarefas:empty::before {
+  content: "Nenhuma tarefa definida...";
+  color: var(--cor-texto-escurecido);
+  text-align: center;
+  margin-top: 24px;
 }

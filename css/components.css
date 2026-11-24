@@ -6,7 +6,6 @@
   cursor: pointer;
 }
 
-
 .card-tarefa {
   position: relative;
   width: 200px;
@@ -138,10 +137,10 @@
   border: none;
   border-radius: var(--raio-borda);
   padding: 28px 32px;
-  width: min(600px, 90vw);
-  height: min(500px, 80vw);
-  max-width: 600px;
-  max-height: 500px;
+  width: min(500px, 90vw);
+  height: min(400px, 80vw);
+  max-width: 500px;
+  max-height: 400px;
   background-color: var(--cor-superficie);
   color: var(--cor-texto);
   box-shadow: 0 20px 40px rgba(30, 22, 51, 0.15);
