@@ -31,6 +31,30 @@
   text-decoration: none;
 }
 
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 32px;
+}
+
+.saudacao h2 {
+  font-size: 2rem;
+  color: var(--cor-texto);
+}
+
+.saudacao p {
+  color: var(--cor-texto-escurecido);
+}
+
+.barra-acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+}
+
+
 body {
   background: var(--cor-fundo);
   color: var(--cor-texto);
@@ -54,10 +78,10 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 1fr auto;
   align-items: center;
   padding: 16px 24px;
 }
+
 
 .barra-filtros {
   display: flex;

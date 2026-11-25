@@ -29,7 +29,13 @@
 
 
     <div class="conteudo">
-      <header>
+
+      <header class="topo">
+        <div class="saudacao">
+          <h2>E aí, o que temos para hoje?</h2>
+          <p>Tire da cabeça. Coloque no papel.</p>
+        </div>
+
         <search>
           <label for="campo-busca" class="visually-hidden">Buscar Tarefa</label>
 
@@ -45,17 +51,21 @@
           </div>
 
         </search>
-        <button type="button" id="botao-nova-tarefa">Nova tarefa</button>
+
       </header>
 
-      <div class="barra-filtros">
-        <label for="filtro-prioridade">Prioridade</label>
-        <select id="filtro-prioridade">
-          <option value="todas">Todas</option>
-          <option value="alta">Alta</option>
-          <option value="media">Média</option>
-          <option value="baixa">Baixa</option>
-        </select>
+      <div class="barra-acoes">
+        <button type="button" id="botao-nova-tarefa">Novo Post-it</button>
+
+        <div class="barra-filtros">
+          <label for="filtro-prioridade">Prioridade</label>
+          <select id="filtro-prioridade">
+            <option value="todas">Todas</option>
+            <option value="alta">Alta</option>
+            <option value="media">Média</option>
+            <option value="baixa">Baixa</option>
+          </select>
+        </div>
       </div>
 
       <main>
