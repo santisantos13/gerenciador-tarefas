@@ -15,62 +15,69 @@
 </head>
 
 <body>
-  <header>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="index.html" class="marca">
+        <img src="assets/icons/logo.png" alt="Lembrei - voltar ao início">
+        <h1 id="titulo"> Lembrei! </h1>
+      </a>
 
-    <a href="index.html" class="marca">
-      <img src="assets/icons/logo.png" alt="Lembrei - voltar ao início">
-      <h1 id="titulo"> Lembrei! </h1>
-    </a>
+      <nav>
+        <a href="index.html" aria-current="page">Meu mural</a>
+      </nav>
+    </aside>
 
-    <search>
 
-      <label for="campo-busca" class="visually-hidden">Buscar Tarefa</label>
+    <div class="conteudo">
+      <header>
+        <search>
+          <label for="campo-busca" class="visually-hidden">Buscar Tarefa</label>
 
-      <div class="busca-caixa">
-        <button type="button" id="botao-busca" aria-label="Buscar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" />
-            <line x1="16.5" y1="16.5" x2="21" y2="21" />
-          </svg>
-        </button>
+          <div class="busca-caixa">
+            <button type="button" id="botao-busca" aria-label="Buscar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="16.5" y1="16.5" x2="21" y2="21" />
+              </svg>
+            </button>
+            <input type="search" id="campo-busca" placeholder="Buscar tarefa...">
+          </div>
 
-        <input type="search" id="campo-busca" placeholder="Buscar tarefa...">
+        </search>
+        <button type="button" id="botao-nova-tarefa">Nova tarefa</button>
+      </header>
+
+      <div class="barra-filtros">
+        <label for="filtro-prioridade">Prioridade</label>
+        <select id="filtro-prioridade">
+          <option value="todas">Todas</option>
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
       </div>
 
-    </search>
+      <main>
+        <section class="coluna" id="coluna-a-definir" data-status="a-definir">
+          <h2>A definir</h2>
+          <div class="lista-tarefas"></div>
+        </section>
 
-    <button type="button" id="botao-nova-tarefa">Nova tarefa</button>
+        <section class="coluna" id="coluna-em-andamento" data-status="em-andamento">
+          <h2>Em andamento</h2>
+          <div class="lista-tarefas"></div>
+        </section>
 
-  </header>
+        <section class="coluna" id="coluna-concluida" data-status="concluida">
+          <h2>Concluídas</h2>
+          <div class="lista-tarefas"></div>
+        </section>
+      </main>
 
-  <div class="barra-filtros">
-    <label for="filtro-prioridade">Prioridade</label>
-    <select id="filtro-prioridade">
-      <option value="todas">Todas</option>
-      <option value="alta">Alta</option>
-      <option value="media">Média</option>
-      <option value="baixa">Baixa</option>
-    </select>
+    </div>
+
   </div>
-
-  <main>
-    <section class="coluna" id="coluna-a-definir" data-status="a-definir">
-      <h2>A definir</h2>
-      <div class="lista-tarefas"></div>
-    </section>
-
-    <section class="coluna" id="coluna-em-andamento" data-status="em-andamento">
-      <h2>Em andamento</h2>
-      <div class="lista-tarefas"></div>
-    </section>
-
-    <section class="coluna" id="coluna-concluida" data-status="concluida">
-      <h2>Concluídas</h2>
-      <div class="lista-tarefas"></div>
-    </section>
-
-  </main>
 
   <dialog id="modal-tarefa">
     <form id="form-tarefa">

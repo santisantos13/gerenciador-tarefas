@@ -1,3 +1,36 @@
+.app {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--cor-barra);
+  color: white;
+  padding: 24px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar .marca {
+  flex-direction: column;
+  color: var(--cor-texto-claro);
+}
+
+.sidebar .marca img {
+  height: 80px;
+}
+
+.sidebar nav a[aria-current="page"] {
+  display: block;
+  padding: 12px 16px;
+  border-radius: var(--raio-borda);
+  background: var(--cor-fundo-mural);
+  color: var(--cor-texto-claro);
+  text-decoration: none;
+}
+
 body {
   background: var(--cor-fundo);
   color: var(--cor-texto);
@@ -21,7 +54,7 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
   padding: 16px 24px;
 }
