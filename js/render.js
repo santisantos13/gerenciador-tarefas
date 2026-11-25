@@ -7,11 +7,20 @@ const rotuloPrioridade = {
 };
 
 const rotuloStatus = { "a-definir": "A definir", "em-andamento": "Em andamento", "concluida": "Concluídas" };
+let animacaoPendente = null;
+
+export function animarProximoCard(id, classe) {
+  animacaoPendente = { id, classe };
+}
 
 export function criarCardTarefa(tarefa) {
 
   const card = document.createElement("article");
   card.classList.add("card-tarefa");
+
+  if (animacaoPendente && animacaoPendente.id === tarefa.id) {
+    card.classList.add(animacaoPendente.classe);
+  }
 
   if (tarefa.status !== "concluida" && estaVencida(tarefa.prazo)) {
     card.classList.add('card-vencido');
@@ -74,4 +83,6 @@ export function renderizar(tarefas) {
     const card = criarCardTarefa(tarefa);
     lista.append(card);
   }
+
+  animacaoPendente = null;
 }

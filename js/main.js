@@ -1,5 +1,5 @@
 import { tarefas, adicionarTarefa, moverTarefa, editarTarefa, buscarTarefa, removerTarefa } from "./state.js";
-import { renderizar } from "./render.js";
+import { renderizar, animarProximoCard } from "./render.js";
 import { gerarId, estaVencida, dataDeHoje } from "./utils.js";
 import { salvarTarefas } from "./storage.js";
 import { filtrarPorTitulo, filtrarPorPrioridade } from "./filters.js";
@@ -60,6 +60,7 @@ formTarefa.addEventListener("submit", (criarTarefa) => {
       status: "a-definir",
     };
     adicionarTarefa(novaTarefa);
+    animarProximoCard(novaTarefa.id, "card-novo");
   } else {
     editarTarefa(idEmEdicao, tarefaTitulo, prioridade, prazo);
   }
@@ -80,10 +81,22 @@ areaColunas.addEventListener("click", (evento) => {
   }
 
   const id = botaoRemover.dataset.id;
-  removerTarefa(id);
-  salvarTarefas(tarefas);
-  atualizarTela();
-  console.log("deu certo")
+  const card = botaoRemover.closest(".card-tarefa");
+
+  function excluir() {
+    removerTarefa(id);
+    salvarTarefas(tarefas);
+    atualizarTela();
+  }
+  const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduzirMovimento) {
+    excluir();
+    return;
+  }
+
+  card.classList.add("card-saindo");
+  card.addEventListener("animationend", excluir, { once: true });
 });
 
 areaColunas.addEventListener("change", (evento) => {
@@ -97,6 +110,7 @@ areaColunas.addEventListener("change", (evento) => {
   const novoStatus = seletor.value;
 
   moverTarefa(id, novoStatus);
+  animarProximoCard(id, "card-movido");
   console.log("gg")
   salvarTarefas(tarefas);
   atualizarTela();
