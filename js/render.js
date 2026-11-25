@@ -84,5 +84,10 @@ export function renderizar(tarefas) {
     lista.append(card);
   }
 
+  for (const lista of listas) {
+    const etiqueta = lista.closest(".coluna").querySelector(".contador");
+    etiqueta.textContent = lista.children.length;
+  }
+
   animacaoPendente = null;
 }

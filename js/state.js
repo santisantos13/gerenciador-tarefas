@@ -26,13 +26,11 @@ export function moverTarefa(id, novoStatus) {
   }
 }
 
-export function editarTarefa(id, novoTitulo, novaPrioridade, novoPrazo) {
+export function editarTarefa(id, dados) {
   const tarefa = tarefas.find((tarefa) => tarefa.id === id);
 
   if (tarefa) {
-    tarefa.titulo = novoTitulo;
-    tarefa.prioridade = novaPrioridade;
-    tarefa.prazo = novoPrazo;
+    Object.assign(tarefa, dados);
   }
 }
 

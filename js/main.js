@@ -9,7 +9,18 @@ const tituloModal = document.getElementById("modal-titulo");
 const botaoSalvar = document.getElementById("botao-salvar");
 const campoBusca = document.getElementById("campo-busca");
 const filtroPrioridade = document.getElementById("filtro-prioridade");
+const campoTitulo = document.getElementById("tarefa-titulo");
+const campoDescricao = document.getElementById("tarefa-descricao");
+const contadorTitulo = document.getElementById("contador-titulo");
+const contadorDescricao = document.getElementById("contador-descricao");
 
+function atualizarContadores() {
+  contadorTitulo.textContent = `${campoTitulo.value.length}/50`;
+  contadorDescricao.textContent = `${campoDescricao.value.length}/200`;
+}
+
+campoTitulo.addEventListener("input", atualizarContadores);
+campoDescricao.addEventListener("input", atualizarContadores);
 
 function atualizarTela() {
   const encontrados = filtrarPorTitulo(tarefas, campoBusca.value);
@@ -37,32 +48,41 @@ const botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 botaoNovaTarefa.addEventListener("click", () => {
   idEmEdicao = null;
   formTarefa.reset();
+  atualizarContadores();
   tituloModal.textContent = "Criar tarefa";
   botaoSalvar.textContent = "✓ Cadastrar";
   modal.showModal();
 });
 
 const formTarefa = document.getElementById("form-tarefa");
-formTarefa.addEventListener("submit", (criarTarefa) => {
-  criarTarefa.preventDefault();
+formTarefa.addEventListener("submit", (evento) => {
+  evento.preventDefault();
 
-  const tarefaTitulo = document.getElementById("tarefa-titulo").value;
+  const titulo = campoTitulo.value.trim();
+  const descricao = campoDescricao.value.trim();
+  const cor = document.querySelector('input[name="cor"]:checked').value;
   const prioridade = document.getElementById("prioridade").value;
   const prazo = document.getElementById("prazo").value;
 
-  if (idEmEdicao === null) {
+  if (!titulo) {
+    campoTitulo.focus();
+    return;
+  }
 
+  if (idEmEdicao === null) {
     const novaTarefa = {
       id: gerarId(),
-      titulo: tarefaTitulo,
-      prioridade: prioridade,
-      prazo: prazo,
+      titulo,
+      descricao,
+      cor,
+      prioridade,
+      prazo,
       status: "a-definir",
     };
     adicionarTarefa(novaTarefa);
     animarProximoCard(novaTarefa.id, "card-novo");
   } else {
-    editarTarefa(idEmEdicao, tarefaTitulo, prioridade, prazo);
+    editarTarefa(idEmEdicao, { titulo, descricao, cor, prioridade, prazo });
   }
 
   salvarTarefas(tarefas);
@@ -119,15 +139,18 @@ areaColunas.addEventListener("change", (evento) => {
 areaColunas.addEventListener("click", (evento) => {
   const botaoEditar = evento.target.closest(".botao-editar-tarefa");
 
-
   if (!botaoEditar) {
     return;
   }
 
   const tarefa = buscarTarefa(botaoEditar.dataset.id);
-  document.getElementById("tarefa-titulo").value = tarefa.titulo;
+
+  campoTitulo.value = tarefa.titulo;
+  campoDescricao.value = tarefa.descricao ?? "";
+  document.querySelector(`input[name="cor"][value="${tarefa.cor ?? "amarelo"}"]`).checked = true;
   document.getElementById("prioridade").value = tarefa.prioridade;
   document.getElementById("prazo").value = tarefa.prazo;
+  atualizarContadores();
 
   idEmEdicao = tarefa.id;
   tituloModal.textContent = "Editar tarefa";

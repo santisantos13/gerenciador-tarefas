@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
   <div class="app">
     <aside class="sidebar">
       <a href="index.html" class="marca">
@@ -26,7 +27,6 @@
         <a href="index.html" aria-current="page">Meu mural</a>
       </nav>
     </aside>
-
 
     <div class="conteudo">
 
@@ -70,23 +70,31 @@
 
       <main>
         <section class="coluna" id="coluna-a-definir" data-status="a-definir">
-          <h2>A definir</h2>
+          <div class="coluna-topo">
+            <h2>A definir</h2>
+            <span class="contador">0</span>
+          </div>
           <div class="lista-tarefas"></div>
         </section>
 
         <section class="coluna" id="coluna-em-andamento" data-status="em-andamento">
-          <h2>Em andamento</h2>
+          <div class="coluna-topo">
+            <h2>Em andamento</h2>
+            <span class="contador">0</span>
+          </div>
           <div class="lista-tarefas"></div>
         </section>
 
         <section class="coluna" id="coluna-concluida" data-status="concluida">
-          <h2>Concluídas</h2>
+          <div class="coluna-topo">
+            <h2>Concluídas</h2>
+            <span class="contador">0</span>
+          </div>
           <div class="lista-tarefas"></div>
         </section>
       </main>
 
     </div>
-
   </div>
 
   <dialog id="modal-tarefa">
@@ -101,8 +109,47 @@
 
       <div class="campo">
         <label for="tarefa-titulo">Título <span>*</span></label>
-        <input type="text" id="tarefa-titulo" placeholder="Ex: Estudar JavaScript..." required>
+        <input type="text" id="tarefa-titulo" placeholder="Ex: Estudar JavaScript..." maxlength="50" required>
+        <small class="contador-caracteres" id="contador-titulo">0/50</small>
       </div>
+
+      <div class="campo">
+        <label for="tarefa-descricao">Descrição (opcional)</label>
+        <textarea id="tarefa-descricao" placeholder="Adicione mais detalhes sobre sua tarefa..." maxlength="200"
+          rows="3"></textarea>
+        <small class="contador-caracteres" id="contador-descricao">0/200</small>
+      </div>
+
+      <fieldset class="campo-cores">
+        <legend>Cor do Post-it</legend>
+        <div class="cores">
+          <label class="opcao-cor">
+            <input type="radio" name="cor" value="amarelo" class="visually-hidden" checked>
+            <span class="bolinha" data-cor="amarelo"></span>
+            <span class="visually-hidden">Amarelo</span>
+          </label>
+          <label class="opcao-cor">
+            <input type="radio" name="cor" value="azul" class="visually-hidden">
+            <span class="bolinha" data-cor="azul"></span>
+            <span class="visually-hidden">Azul</span>
+          </label>
+          <label class="opcao-cor">
+            <input type="radio" name="cor" value="lilas" class="visually-hidden">
+            <span class="bolinha" data-cor="lilas"></span>
+            <span class="visually-hidden">Lilás</span>
+          </label>
+          <label class="opcao-cor">
+            <input type="radio" name="cor" value="verde" class="visually-hidden">
+            <span class="bolinha" data-cor="verde"></span>
+            <span class="visually-hidden">Verde</span>
+          </label>
+          <label class="opcao-cor">
+            <input type="radio" name="cor" value="pessego" class="visually-hidden">
+            <span class="bolinha" data-cor="pessego"></span>
+            <span class="visually-hidden">Pêssego</span>
+          </label>
+        </div>
+      </fieldset>
 
       <div class="linha-dupla">
         <div class="campo">

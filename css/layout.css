@@ -4,6 +4,10 @@
   min-height: 100vh;
 }
 
+.app nav {
+  margin-top: 35px;
+}
+
 .sidebar {
   background: var(--cor-barra);
   color: white;
